@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">smartTimetable</string>
+    <string name="subject_code">Subject Code</string>
+    <string name="subject_name">Subject Name</string>
+    <string name="theory_hours">Theory Hours</string>
+    <string name="practical_hours">Practical Hours</string>
+    <string name="save_scheme">Save Scheme</string>
+    <string name="add_subject">Add Subject</string>
+    <string name="continuous_lab_2_periods">Continuous Lab (2 periods)</string>
+
+
+    <string name="_1st_period_mathematics">1st Period - Mathematics</string>
+    <string name="_2nd_period_physics">2nd Period - Physics</string>
+
+    <string name="branch_aiml">Branch: AIML</string>
+    <string name="semester_1">Semester: 1</string>
+
+    <string name="view_timetable">View Timetable</string>
+    <string name="day_time">Day/Time</string>
+    <string name="_9_10">9-10</string>
+    <string name="_10_11">10-11</string>
+    <string name="_11_12">11-12</string>
+    <string name="_12_1">12-1</string>
+    <string name="_2_3">2-3</string>
+    <string name="_3_4">3-4</string>
+    <string name="monday">Monday</string>
+
+
+    <string name="tuesday">Tuesday</string>
+    <string name="os">OS</string>
+    <string name="cn">CN</string>
+    <string name="maths">Maths</string>
+
+    <string name="dbms">DBMS</string>
+    <string name="lunch">Lunch</string>
+    <string name="lab">LAB</string>
+
+    <string name="faculty_name">Faculty Name</string>
+    <string name="subject_assigned">Subject Assigned</string>
+
+
+    <string name="is_lab">Is Lab?</string>
+    <string name="save">Save</string>
+    <string name="add_room_lab">Add Room / Lab</string>
+    <string name="add_faculty">Add Faculty</string>
+    <string name="save_faculty">Save Faculty</string>
+
+    <string name="select_scheme">Select Scheme</string>
+    <string name="generated_timetable">Generated Timetable</string>
+    <string name="generate_timetable">generate_timetable</string>
+
+
+</resources>
