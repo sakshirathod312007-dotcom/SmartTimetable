@@ -1,43 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@drawable/background_gradient">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:stretchColumns="*">
 
-        <!-- Title -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/generated_timetable"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:gravity="center"
-            android:layout_marginBottom="20dp"/>
+        <TableRow>
+            <TextView android:text="@string/day" android:padding="8dp"/>
+            <TextView android:text="@string/p1" android:padding="8dp"/>
+            <TextView android:text="@string/p2" android:padding="8dp"/>
+            <TextView android:text="@string/p3" android:padding="8dp"/>
+            <TextView android:text="@string/p4" android:padding="8dp"/>
+        </TableRow>
 
-        <!-- Table -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <TableRow>
+            <TextView android:text="@string/monday" android:padding="8dp"/>
+            <TextView android:text="@string/maths" android:padding="8dp"/>
+            <TextView android:text="@string/cn" android:padding="8dp"/>
+            <TextView android:text="@string/lunch" android:padding="8dp"/>
+            <TextView android:text="@string/java" android:padding="8dp"/>
+        </TableRow>
 
-            <TableLayout
-                android:id="@+id/tableLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:stretchColumns="*"
-                android:background="#FFFFFF"
-                android:padding="8dp">
+        <TableRow>
+            <TextView android:text="@string/tuesday" android:padding="8dp"/>
+            <TextView android:text="@string/dbms" android:padding="8dp"/>
+            <TextView android:text="@string/lab" android:padding="8dp"/>
+            <TextView android:text="@string/Lunch" android:padding="8dp"/>
+            <TextView android:text="@string/python" android:padding="8dp"/>
+        </TableRow>
 
-            </TableLayout>
+    </TableLayout>
 
-        </HorizontalScrollView>
-
-    </LinearLayout>
-
-</ScrollView>
+</HorizontalScrollView>

@@ -4,8 +4,8 @@
     <string name="subject_name">Subject Name</string>
     <string name="theory_hours">Theory Hours</string>
     <string name="practical_hours">Practical Hours</string>
-    <string name="save_scheme">Save Scheme</string>
-    <string name="add_subject">Add Subject</string>
+
+
     <string name="continuous_lab_2_periods">Continuous Lab (2 periods)</string>
 
 
@@ -15,7 +15,7 @@
     <string name="branch_aiml">Branch: AIML</string>
     <string name="semester_1">Semester: 1</string>
 
-    <string name="view_timetable">View Timetable</string>
+
     <string name="day_time">Day/Time</string>
     <string name="_9_10">9-10</string>
     <string name="_10_11">10-11</string>
@@ -23,17 +23,7 @@
     <string name="_12_1">12-1</string>
     <string name="_2_3">2-3</string>
     <string name="_3_4">3-4</string>
-    <string name="monday">Monday</string>
 
-
-    <string name="tuesday">Tuesday</string>
-    <string name="os">OS</string>
-    <string name="cn">CN</string>
-    <string name="maths">Maths</string>
-
-    <string name="dbms">DBMS</string>
-    <string name="lunch">Lunch</string>
-    <string name="lab">LAB</string>
 
     <string name="faculty_name">Faculty Name</string>
     <string name="subject_assigned">Subject Assigned</string>
@@ -46,8 +36,42 @@
     <string name="save_faculty">Save Faculty</string>
 
     <string name="select_scheme">Select Scheme</string>
-    <string name="generated_timetable">Generated Timetable</string>
-    <string name="generate_timetable">generate_timetable</string>
+
+
+    <string name="plan_your_time_smartly">Plan Your Time Smartly</string>
+    <string name="smart_timetable_generator">Smart Timetable Generator</string>
+    <string name="login">Login</string>
+    <string name="login_page">Login Page</string>
+
+    <string name="upload_scheme">Upload Scheme</string>
+    <string name="view_timetable">View Timetable</string>
+    <string name="faculty_management">Faculty Management</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="save_scheme">Save Scheme</string>
+    <string name="add_subject">Add Subject</string>
+    <string name="generate_timetable">Generate Timetable</string>
+    <string name="day">Day</string>
+    <string name="p1">P1</string>
+    <string name="p2">P2</string>
+    <string name="p3">P3</string>
+    <string name="p4">P4</string>
+    <string name="monday">Monday</string>
+    <string name="maths">Maths</string>
+    <string name="cn">CN</string>
+    <string name="break">Break</string>
+    <string name="lunch">Lunch</string>
+    <string name="java">Java</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="dbms">DBMS</string>
+    <string name="lab">Lab</string>
+    <string name="Lunch">Lunch</string>
+    <string name="python">Python</string>
 
 
 </resources>

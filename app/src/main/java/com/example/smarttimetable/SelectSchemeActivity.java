@@ -1,16 +1,21 @@
 package com.example.smarttimetable;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.*;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class SelectSchemeActivity extends AppCompatActivity {
 
     Spinner spinnerBranch, spinnerSemester;
+    EditText etSubjectName;
+    Button btnAddSubject, btnSaveScheme;
+    ListView listSubjects;
+
+    ArrayList<String> subjects = new ArrayList<>();
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,28 +24,35 @@ public class SelectSchemeActivity extends AppCompatActivity {
 
         spinnerBranch = findViewById(R.id.spinnerBranch);
         spinnerSemester = findViewById(R.id.spinnerSemester);
-        Button btnGenerate = findViewById(R.id.btnGenerateTimetable);
-        btnGenerate.setOnClickListener(v -> {
-            Intent intent = new Intent(SelectSchemeActivity.this,
-                    GenerateTimetableActivity.class);
-            startActivity(intent);
-        });
+        etSubjectName = findViewById(R.id.etSubjectName);
+        btnAddSubject = findViewById(R.id.btnAddSubject);
+        btnSaveScheme = findViewById(R.id.btnSaveScheme);
+        listSubjects = findViewById(R.id.listSubjects);
 
-        String[] branches = {"AIML", "CSE", "IT", "ENTC"};
+        String[] branches = {"AIML", "CO", "IT", "ME"};
         String[] semesters = {"1", "2", "3", "4", "5", "6"};
 
-        ArrayAdapter<String> branchAdapter =
-                new ArrayAdapter<>(this,
-                        android.R.layout.simple_spinner_dropdown_item,
-                        branches);
+        spinnerBranch.setAdapter(new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_dropdown_item, branches));
 
-        spinnerBranch.setAdapter(branchAdapter);
+        spinnerSemester.setAdapter(new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_dropdown_item, semesters));
 
-        ArrayAdapter<String> semesterAdapter =
-                new ArrayAdapter<>(this,
-                        android.R.layout.simple_spinner_dropdown_item,
-                        semesters);
+        adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, subjects);
 
-        spinnerSemester.setAdapter(semesterAdapter);
+        listSubjects.setAdapter(adapter);
+
+        btnAddSubject.setOnClickListener(v -> {
+            String subject = etSubjectName.getText().toString().trim();
+            if (!subject.isEmpty()) {
+                subjects.add(subject);
+                adapter.notifyDataSetChanged();
+                etSubjectName.setText("");
+            }
+        });
+
+        btnSaveScheme.setOnClickListener(v ->
+                Toast.makeText(this, "Scheme Saved!", Toast.LENGTH_SHORT).show());
     }
 }
