@@ -17,12 +17,6 @@
 
 
     <string name="day_time">Day/Time</string>
-    <string name="_9_10">9-10</string>
-    <string name="_10_11">10-11</string>
-    <string name="_11_12">11-12</string>
-    <string name="_12_1">12-1</string>
-    <string name="_2_3">2-3</string>
-    <string name="_3_4">3-4</string>
 
 
     <string name="faculty_name">Faculty Name</string>
@@ -64,7 +58,6 @@
     <string name="monday">Monday</string>
     <string name="maths">Maths</string>
     <string name="cn">CN</string>
-    <string name="break">Break</string>
     <string name="lunch">Lunch</string>
     <string name="java">Java</string>
     <string name="tuesday">Tuesday</string>
