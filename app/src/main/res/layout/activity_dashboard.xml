@@ -21,7 +21,7 @@
 
         <Button
             android:text="@string/upload_scheme"
-            android:id="@+id/btnScheme"
+            android:id="@+id/btnUpload"
             style="@style/DashboardButton"/>
 
         <Button

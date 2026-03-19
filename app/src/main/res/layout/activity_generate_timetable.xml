@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
+    <!-- Branch Spinner -->
     <Spinner
         android:id="@+id/spinnerBranch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"/>
 
+    <!-- Semester Spinner -->
     <Spinner
-        android:id="@+id/spinnerSemester"
+        android:id="@+id/spinnerSem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginBottom="30dp"/>
 
+    <!-- Generate Button -->
     <Button
-        android:id="@+id/btnGenerateTimetable"
+        android:id="@+id/btnGenerate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/generate_timetable"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="60dp"
+        android:text="Generate Timetable"
+        android:textSize="18sp"/>
 
 </LinearLayout>

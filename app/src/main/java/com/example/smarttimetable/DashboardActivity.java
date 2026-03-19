@@ -1,41 +1,52 @@
 package com.example.smarttimetable;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
+import android.widget.Button;
 
-import com.example.smarttimetable.R;
-import com.google.android.material.navigation.NavigationView;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    DrawerLayout drawerLayout;
-    ActionBarDrawerToggle toggle;
-    NavigationView navigationView;
+    Button btnGenerate;
+    Button btnUpload;
+    Button btnView;
+    Button btnFaculty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        findViewById(R.id.btnGenerate).setOnClickListener(v ->
-                startActivity(new Intent(this, GenerateTimetableActivity.class)));
 
-        findViewById(R.id.btnView).setOnClickListener(v ->
-                startActivity(new Intent(this, ViewTimetableActivity.class)));
+        // Button IDs
+        btnGenerate = findViewById(R.id.btnGenerate);
+        btnUpload = findViewById(R.id.btnUpload);
+        btnView = findViewById(R.id.btnView);
+        btnFaculty = findViewById(R.id.btnFaculty);
 
-        findViewById(R.id.btnFaculty).setOnClickListener(v ->
-                startActivity(new Intent(this, FacultyActivity.class)));
+        // Generate Timetable
+        btnGenerate.setOnClickListener(v -> {
+            Intent intent = new Intent(DashboardActivity.this, GenerateTimetableActivity.class);
+            startActivity(intent);
+        });
 
-    }
+        // Upload Scheme
+        btnUpload.setOnClickListener(v -> {
+            Intent intent = new Intent(DashboardActivity.this, SelectSchemeActivity.class);
+            startActivity(intent);
+        });
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        // View Timetable
+        btnView.setOnClickListener(v -> {
+            Intent intent = new Intent(DashboardActivity.this, ViewTimetableActivity.class);
+            startActivity(intent);
+        });
+
+        // Faculty Management
+        btnFaculty.setOnClickListener(v -> {
+            Intent intent = new Intent(DashboardActivity.this, FacultyActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

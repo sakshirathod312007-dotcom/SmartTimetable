@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:stretchColumns="*">
 
+
         <TableRow>
             <TextView android:text="@string/day" android:padding="8dp"/>
             <TextView android:text="@string/p1" android:padding="8dp"/>
@@ -34,5 +35,6 @@
         </TableRow>
 
     </TableLayout>
+
 
 </HorizontalScrollView>
