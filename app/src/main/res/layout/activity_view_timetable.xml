@@ -1,40 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<HorizontalScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
-        android:id="@+id/tableLayout"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:stretchColumns="*">
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
 
-        <TableRow>
-            <TextView android:text="@string/day" android:padding="8dp"/>
-            <TextView android:text="@string/p1" android:padding="8dp"/>
-            <TextView android:text="@string/p2" android:padding="8dp"/>
-            <TextView android:text="@string/p3" android:padding="8dp"/>
-            <TextView android:text="@string/p4" android:padding="8dp"/>
-        </TableRow>
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/smart_timetable"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#6200EE"
+                android:gravity="center"
+                android:padding="10dp"/>
 
-        <TableRow>
-            <TextView android:text="@string/monday" android:padding="8dp"/>
-            <TextView android:text="@string/maths" android:padding="8dp"/>
-            <TextView android:text="@string/cn" android:padding="8dp"/>
-            <TextView android:text="@string/lunch" android:padding="8dp"/>
-            <TextView android:text="@string/java" android:padding="8dp"/>
-        </TableRow>
+            <!-- Table -->
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="4dp"/>
 
-        <TableRow>
-            <TextView android:text="@string/tuesday" android:padding="8dp"/>
-            <TextView android:text="@string/dbms" android:padding="8dp"/>
-            <TextView android:text="@string/lab" android:padding="8dp"/>
-            <TextView android:text="@string/Lunch" android:padding="8dp"/>
-            <TextView android:text="@string/python" android:padding="8dp"/>
-        </TableRow>
+            <!-- Share -->
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/share_as_pdf"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#6200EE"
+                android:textColor="#FFFFFF"/>
 
-    </TableLayout>
+        </LinearLayout>
 
+    </ScrollView>
 
 </HorizontalScrollView>

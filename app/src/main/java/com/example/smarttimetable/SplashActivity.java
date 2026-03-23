@@ -1,10 +1,10 @@
 package com.example.smarttimetable;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
 import androidx.appcompat.app.AppCompatActivity;
-
-
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -14,8 +14,12 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         new Handler().postDelayed(() -> {
-            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+
+            // 👉 NEXT SCREEN (Dashboard ya Login)
+            Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+            startActivity(intent);
             finish();
-        }, 2500);
+
+        }, 2000); // 2 seconds
     }
 }

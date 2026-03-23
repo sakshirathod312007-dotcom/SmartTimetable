@@ -1,9 +1,16 @@
 package com.example.smarttimetable;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.HashSet;
+import java.util.List;
 
 public class GenerateTimetableActivity extends AppCompatActivity {
 
@@ -15,58 +22,74 @@ public class GenerateTimetableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_timetable);
 
+        // Bind views
         spinnerBranch = findViewById(R.id.spinnerBranch);
         spinnerSem = findViewById(R.id.spinnerSem);
         btnGenerate = findViewById(R.id.btnGenerate);
 
-        // ---------- Spinner Data ----------
-
-        String[] branches = {"CO","IT","ME","CE","EE"};
+        // Data
+        String[] branches = {"AIML"};
         String[] sems = {"1","2","3","4","5","6"};
 
-        ArrayAdapter<String> branchAdapter =
-                new ArrayAdapter<>(this,
-                        android.R.layout.simple_spinner_dropdown_item,
-                        branches);
+        // Adapters
+        spinnerBranch.setAdapter(new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_dropdown_item, branches));
 
-        ArrayAdapter<String> semAdapter =
-                new ArrayAdapter<>(this,
-                        android.R.layout.simple_spinner_dropdown_item,
-                        sems);
+        spinnerSem.setAdapter(new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_dropdown_item, sems));
 
-        spinnerBranch.setAdapter(branchAdapter);
-        spinnerSem.setAdapter(semAdapter);
-
-        // ---------- Generate Button ----------
-
+        // Button Click
         btnGenerate.setOnClickListener(v -> {
 
-            String branch = spinnerBranch.getSelectedItem().toString();
             String sem = spinnerSem.getSelectedItem().toString();
+            String branch = spinnerBranch.getSelectedItem().toString();
 
             DBHelper db = new DBHelper(this);
+            db.deleteTimetable(sem, branch);
 
-            String[] days = {"Mon","Tue","Wed","Thu","Fri"};
-            String[] subjects = {"DBMS","Java","CN","Python","AI","Maths"};
-            String[] faculty = {"Asha","Patil","Kale","Joshi","Mehta","Rao"};
-            String[] rooms = {"101","102","103","Lab1","Lab2","104"};
+            // ✅ Subject class use ho raha hai
+            List<Subject> subjects = SubjectManager.getSubjects(sem);
 
-            for(int i=0;i<5;i++){
+            if (subjects.isEmpty()) {
+                Toast.makeText(this, "No subjects found!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            TimetableGenerator generator = new TimetableGenerator();
+            String[][] timetable = generator.generate(subjects);
+
+            String[] days = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+            String[] times = {
+                    "10:15-11:15",
+                    "11:15-12:15",
+                    "12:15-1:00",
+                    "1:00-2:00",
+                    "2:00-3:00",
+                    "3:00-5:15"
+            };
+
+            for(int i=0;i<6;i++){
                 for(int j=0;j<6;j++){
 
                     db.insertTimetable(
                             days[i],
-                            "P"+(j+1),
-                            subjects[j],
-                            faculty[j],
-                            rooms[j]
+                            times[j],
+                            timetable[i][j],
+                            "",
+                            "",
+                            sem,
+                            branch
                     );
                 }
             }
 
-            Toast.makeText(this,
-                    "Timetable Generated for " + branch + " Sem " + sem,
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Timetable Generated",Toast.LENGTH_SHORT).show();
+
+            // Next screen
+            Intent intent = new Intent(this, ViewTimetableActivity.class);
+            intent.putExtra("sem", sem);
+            intent.putExtra("branch", branch);
+            startActivity(intent);
         });
     }
 }

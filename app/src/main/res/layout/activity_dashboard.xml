@@ -6,42 +6,76 @@
     android:layout_height="match_parent">
 
     <!-- Main Content -->
+
+    <!-- Navigation Drawer -->
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_gradient">
+        android:background="#2d32a8"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <include layout="@layout/toolbar"/>
+        <include layout="@layout/toolbar" />
 
+        <!-- Generate -->
         <Button
-            android:text="@string/generate_timetable"
             android:id="@+id/btnGenerate"
-            style="@style/DashboardButton"/>
-
-        <Button
-            android:text="@string/upload_scheme"
-            android:id="@+id/btnUpload"
-            style="@style/DashboardButton"/>
-
-        <Button
-            android:text="@string/view_timetable"
-            android:id="@+id/btnView"
-            style="@style/DashboardButton"/>
-
-        <Button
-            android:text="@string/faculty_management"
-            android:id="@+id/btnFaculty"
-            style="@style/DashboardButton"/>
-
-        <TextView
-            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="#FFFFFF"
+            android:elevation="6dp"
+            android:text="@string/generate_timetable"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <!-- Upload -->
+        <Button
+            android:id="@+id/btnUpload"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="#FFFFFF"
+            android:elevation="6dp"
+            android:text="@string/upload_scheme"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <!-- View -->
+        <Button
+            android:id="@+id/btnView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="#FFFFFF"
+            android:elevation="6dp"
+            android:text="@string/view_timetable"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <!-- Faculty -->
+        <Button
+            android:id="@+id/btnFaculty"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="#FFFFFF"
+            android:elevation="6dp"
+            android:text="@string/faculty_management"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:padding="16dp"
+            android:layout_width="341dp"
+            android:layout_height="237dp"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/android_logo" />
+
 
     </LinearLayout>
 
-    <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="280dp"

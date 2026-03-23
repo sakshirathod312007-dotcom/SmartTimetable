@@ -1,31 +1,54 @@
 package com.example.smarttimetable;
 
-import java.util.Random;
+import java.util.*;
 
 public class TimetableGenerator {
 
-    String[] subjects = {
-            "Maths",
-            "DBMS",
-            "Java",
-            "CN",
-            "Python",
-            "AI"
-    };
+    public String[][] generate(List<Subject> subjects) {
 
-    String[][] timetable = new String[5][6];
+        String[][] timetable = new String[6][6];
 
-    public String[][] generateTimetable(){
+        List<String> pool = new ArrayList<>();
 
-        Random random = new Random();
+        // create pool
+        for (Subject s : subjects) {
+            for (int i = 0; i < s.getHours(); i++) {
+                pool.add(s.getName());
+            }
+        }
 
-        for(int i=0;i<5;i++){
+        Collections.shuffle(pool);
 
-            for(int j=0;j<6;j++){
+        int index = 0;
 
-                int index = random.nextInt(subjects.length);
+        for (int i = 0; i < 6; i++) {
 
-                timetable[i][j] = subjects[index];
+            Set<String> usedToday = new HashSet<>();
+
+            for (int j = 0; j < 6; j++) {
+
+                if (j == 2) {
+                    timetable[i][j] = "LUNCH";
+                    continue;
+                }
+
+                if (index >= pool.size()) {
+                    index = 0; // 🔥 restart to avoid FREE
+                }
+
+                String subject = pool.get(index);
+
+                int attempts = 0;
+                while (usedToday.contains(subject) && attempts < 10) {
+                    index++;
+                    if (index >= pool.size()) index = 0;
+                    subject = pool.get(index);
+                    attempts++;
+                }
+
+                timetable[i][j] = subject;
+                usedToday.add(subject);
+                index++;
             }
         }
 

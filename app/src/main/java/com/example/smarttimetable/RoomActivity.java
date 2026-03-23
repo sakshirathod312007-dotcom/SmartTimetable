@@ -24,11 +24,10 @@ public class RoomActivity extends AppCompatActivity {
 
         DBHelper db = new DBHelper(this);
 
-        btnSave.setOnClickListener(v -> {
 
-            db.insertRoom(etRoom.getText().toString());
 
-            Toast.makeText(this,"Room Saved",Toast.LENGTH_SHORT).show();
-        });
+
+
+
     }
 }

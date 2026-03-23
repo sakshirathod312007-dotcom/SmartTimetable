@@ -6,4 +6,5 @@
     <color name="backgroundStart">#6A5AE0</color>
     <color name="backgroundEnd">#4B3DBA</color>
     <color name="white">#FFFFFF</color>
+    <color name="btn_color">#090b47</color>
 </resources>
